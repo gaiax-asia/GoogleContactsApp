@@ -1,0 +1,17 @@
+<h1>Contact list</h1>
+<table border=1>
+  <thead>
+    <tr>
+      <td>Fullname</td>
+      <td>Email</td>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @contacts.each do |contact|  -%>
+      <tr>
+        <td><%= contact.fullname || '-' %></td>
+        <td><%= contact.email || '-'%></td>
+      </tr>
+    <%- end -%>
+  <tbody>
+</table>

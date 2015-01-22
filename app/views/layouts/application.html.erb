@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GoogleContactsApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header style='height:60px;background:black;color:white;padding:10px;'>
+  <h1 style='float:left'>Contact App</h1>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, style:'float:right;color:white;' if current_user %>
+</header>
+
+<% flash.keys.each do |key|%>
+  <%= flash[key] %>
+<% end  %>
+<%= yield %>
+
+</body>
+</html>
