@@ -1,0 +1,55 @@
+<%= div_for contact do %>
+  <div class="left-panel">
+    <img src="" alt="<%= contact.fullname%>" class="pull-left">
+    <div class="pull-left contact-actions clear-left">
+      <%= link_to 'Edit', edit_contact_path(contact), class: 'hidden edit-contact-link'%>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="wrapper">
+      <h2><%= contact.fullname%></h2>
+      <%- if contact.positions -%>
+        <ul>
+          <% contact.positions.each do |org, title|%>
+            <li><%= "#{title} @ #{org}"%></li>
+          <% end %>
+        </ul>
+      <%- end -%>
+
+      <%- if contact.addresses-%>
+        <div class="pull-left full-width addresses-wrapper">
+            <ul>
+              <li>Address</li>
+              <% contact.addresses.each do |type, address|%>
+                <li><%= "#{type}: #{address}" %></li>
+              <% end %>
+            </ul>
+        </div>
+      <%- end -%>
+
+      <div class="pull-left half-width">
+        <%- if contact.phones -%>
+          <ul>
+            <li>Phones</li>
+            <% contact.phones.each do |type, number|%>
+              <li><%= "#{type}: #{number}"%></li>
+            <% end %>
+          </ul>
+        <%- end -%>
+      </div>
+      <div class="pull-left half-width">
+        <%- if contact.emails -%>
+          <ul>
+            <li>Emails</li>
+            <% contact.emails.each do |email|%>
+              <li><%= email %></li>
+            <% end %>
+          </ul>
+        <%- end -%>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+<% end %>
+

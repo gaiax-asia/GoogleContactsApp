@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+body,html,h1,h2,h3,h4,h5,p,div,span, ul, li{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+  list-style-type:none;
+}
+
+.pull-left{float: left}
+.pull-right{float: right}
+.clearfix{clear: both}
+.half-width{width: 50%}
+.full-width{width: 100%}
+.clear-left{clear: left}
+.hidden{display:none}
+
+.site-header{
+  height:40px;
+  background:black;
+  color:white;
+  padding:5px;
+}
+
+.site-header .logout-link{
+  float: right;
+  color: white;
+}
